@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <title>Contacts</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="">Contacts</h1>
+        <form action="add" method="POST">
+            <input type="text" name="name" placeholder="Nombre">
+            <input type="number" name="number" placeholder="Número">
+            <input type="text" name="direction" placeholder="Dirección">
+            <input type="text" name="email" placeholder="Correo">
+            <button type="submit"> Add </button>
+            <br>
+            <% contacts.map(item =>{ %>
+                <p><%= item.data.name%></p>
+                <a href="delete/<%=item.id%>">Delete</a>
+            <%})%>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
