@@ -22,8 +22,7 @@ app.get('/', async(req,res)=>{
 app.post('/add', (req,res)=>{
     const contact ={
         name:req.body.name,
-        numbernumero:Number(req.body.number),
-        direction:req.body.direction,
+        number:Number(req.body.number),
         email:req.body.email,
     }
     database.collection('contacts').add(contact);
